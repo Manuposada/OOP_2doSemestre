@@ -18,7 +18,7 @@ class Main {
         // Método constructor del scanner para recibir input del usuario
         Scanner userInput = new Scanner(System.in);
 
-      for (i = personaArray.lenght; i ≤ 4 ; i++) {
+      for (int i = personaArray.lenght; i ≤ 4 ; i++) {
         
         
          // Solicitamos al usuario los datos de persona1
