@@ -17,16 +17,20 @@ class Main {
         Persona persona;
         
         // Método constructor del scanner para recibir input del usuario
-        Scanner userInput = new Scanner(System.in);
+        Scanner userInput;
 
       for (int i = 0; i < 4 ; i++) {
+
+
+       userInput = new Scanner(System.in);
         
           persona = new Persona();
         
          // Solicitamos al usuario los datos de persona1
           System.out.println("¡Bienvenido! Para comenzar, por favor ingrese su nombre:");
           String nombre = userInput.nextLine();
-          persona.setNombre(nombre);
+        
+        persona.setNombre(nombre);
 
           System.out.println("Hola "+nombre+", ¿Cual es su apellido?:");
           String apellido = userInput.nextLine();
@@ -38,15 +42,15 @@ class Main {
 
           System.out.println("Muchas gracias, por último, ingrese su edad en números:");
           int edad = userInput.nextInt();
-          persona.setEdad(edad);
+          persona.setEdad(edad); 
 
-          System.out.println("Registro exitoso para "+nombre+" "+apellido+", "+genero+" de "+edad+" años.");
+          System.out.println("Registro #"+i+" exitoso para "+nombre+" "+apellido+", "+genero+" de "+edad+" años.");
           
           personaArray[i] = persona;
-          
+        
+    
       }
-       
-       userInput.close();
+      
       
     }
   
