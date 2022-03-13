@@ -13,13 +13,13 @@ class Main {
     public static void main(String[] args){
       
        // Se estblece un array de tipo Persona
-        Persona personaArray[] = new Persona[4];
+        Persona personaArray[] = new Persona[5];
         Persona persona;
         
         // Método constructor del scanner para recibir input del usuario
         Scanner userInput = new Scanner(System.in);
 
-      for (int i = personaArray.lenght; i ≤ 4 ; i++) {
+      for (int i = 0; i < 4 ; i++) {
         
           persona = new Persona();
         
@@ -41,11 +41,13 @@ class Main {
           persona.setEdad(edad);
 
           System.out.println("Registro exitoso para "+nombre+" "+apellido+", "+genero+" de "+edad+" años.");
-          userInput.close();
+          
           personaArray[i] = persona;
+          
+          System.out.println(persona + i);
       }
        
-       
+       userInput.close();
       
     }
   
