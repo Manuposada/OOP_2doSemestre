@@ -12,8 +12,10 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args){
       
-       // Se estblece un array de tipo Persona
+       
+     // Se establece un array de tipo Persona
         Persona personaArray[] = new Persona[5];
+        
         Persona persona;
         
         // Método constructor del scanner para recibir input del usuario
