@@ -44,7 +44,6 @@ class Main {
           
           personaArray[i] = persona;
           
-          System.out.println(persona + i);
       }
        
        userInput.close();
