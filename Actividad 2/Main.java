@@ -47,7 +47,6 @@ class Main {
           System.out.println("Registro #"+i+" exitoso para "+nombre+" "+apellido+", "+genero+" de "+edad+" años.");
           
           personaArray[i] = persona;
-        
     
       }
       
