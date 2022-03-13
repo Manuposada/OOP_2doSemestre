@@ -14,33 +14,35 @@ class Main {
       
        // Se estblece un array de tipo Persona
         Persona personaArray[] = new Persona[4];
-
+        Persona persona;
+        
         // Método constructor del scanner para recibir input del usuario
         Scanner userInput = new Scanner(System.in);
 
       for (int i = personaArray.lenght; i ≤ 4 ; i++) {
         
+          persona = new Persona();
         
          // Solicitamos al usuario los datos de persona1
           System.out.println("¡Bienvenido! Para comenzar, por favor ingrese su nombre:");
           String nombre = userInput.nextLine();
-          personaArray[i].setNombre(nombre);
+          persona.setNombre(nombre);
 
           System.out.println("Hola "+nombre+", ¿Cual es su apellido?:");
           String apellido = userInput.nextLine();
-          personaArray[i].setApellido(apellido);
+          persona.setApellido(apellido);
 
           System.out.println("Generando registro para "+nombre+" "+apellido+", ¿es usted Mujer u Hombre?:");
           String genero = userInput.nextLine();
-          personaArray[i].setGenero(genero);
+          persona.setGenero(genero);
 
           System.out.println("Muchas gracias, por último, ingrese su edad en números:");
           int edad = userInput.nextInt();
-          personaArray[i].setEdad(edad);
+          persona.setEdad(edad);
 
           System.out.println("Registro exitoso para "+nombre+" "+apellido+", "+genero+" de "+edad+" años.");
           userInput.close();
-            
+          personaArray[i] = persona;
       }
        
        
