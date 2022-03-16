@@ -13,13 +13,13 @@ class Main {
     public static void main(String[] args){
       
        // Se estblece un array de tipo Persona
-        Persona personaArray[] = new Persona[5];
+        Persona[] personaArray = new Persona[2];
         Persona persona;
         
         // Método constructor del scanner para recibir input del usuario
         Scanner userInput;
 
-      for (int i = 0; i < 5 ; i++) {
+      for (int i = 0; i < 2 ; i++) {
 
 
        userInput = new Scanner(System.in);
@@ -48,9 +48,8 @@ class Main {
           personaArray[i] = persona;
       }
       
-      for (int i = 0; i < 5; i++){
+      for (int i = 0; i < 2; i++){
 
-        persona = new Persona();
         persona = personaArray[i];
                    
             int edad = persona.getEdad();
