@@ -1,5 +1,6 @@
 /**
- * Ejecicio Actividad 2, Programación Orientada a Objetos
+ * Ejecicio Actividad de aprendizaje 2
+ * Programación Orientada a Objetos
  * IU Digital de Antioquia
  *
  * 20/03/2022
@@ -16,8 +17,7 @@ class Persona {
         private String apellido;
         private String genero;
         private float edad;
-
-
+        
     /**
      * Métodos de la clase
      */
@@ -61,6 +61,5 @@ class Persona {
         public float getEdad(){
             return this.edad;
         }
-
         
 }   

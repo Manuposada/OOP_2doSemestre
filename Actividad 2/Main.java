@@ -1,5 +1,6 @@
 /**
- * Ejecicio Actividad 2, Programación Orientada a Objetos
+ * Ejecicio Actividad de aprendizaje 2
+ * Programación Orientada a Objetos
  * IU Digital de Antioquia
  *
  * 20/03/2022
@@ -31,7 +32,7 @@ class Main {
             
       persona = new Persona();
 
-      System.out.println("Por favor, ingrese su nombre:");
+      System.out.println("\n" + "Por favor, ingrese su nombre:");
       String nombre = userInput.next();
       persona.setNombre(nombre);
 
@@ -39,15 +40,16 @@ class Main {
       String apellido = userInput.next();
       persona.setApellido(apellido);
 
-      System.out.println("Generando registro para "+nombre+" "+apellido+", ¿es usted Mujer u Hombre?:");
+      System.out.println("Generando registro para "+nombre+" "+apellido+", ¿es usted Hombre / Mujer?:");
       String genero = userInput.next();
       persona.setGenero(genero);
 
       System.out.println("Muchas gracias, por último, ingrese su edad en números:");
       float edad = userInput.nextFloat();
-      persona.setEdad(edad);       
+      persona.setEdad(edad);      
 
-      System.out.println("\n" + "Registro #" + i + " exitoso para " + nombre + " " + apellido + ", " + genero + " de " + edad + " años.");          
+      System.out.println("\n" + "Registro #" + i + " exitoso para " + nombre + " " + apellido + ", " + genero + " de " + edad + " años.");
+      System.out.println("\n" + "Nuevo registro");          
           
       // Asigna los valores de la persona establecidos anteriormente y los guarda en la posición "i" del array personaArray
       personaArray[i] = persona;
@@ -68,17 +70,58 @@ class Main {
 
     // Imprime en consola el promedio de las edades, utilizando el metodo promedioEdades()
     System.out.println("\n" + "El promedio de edades es: " + promedioEdades(totalEdades, cantidadPersonas) + "\n");
-    
-    // Se cierra el input de usuario para evitar leaks de memoria
+
+    // Se llama método para imprimir en consola la cantidad de Hombres y Mujeres registrados
+    printCantidadDeHombresYMujeres(cantidadPersonas, personaArray);
+
+    // Se cierra el input de usuario para evitar fugas de memoria
     userInput.close();
-      
+
   }
 
-  // método que toma la suma de las edades de todas las personas registradas, y las divide ente la cantidad de estas
+
+  // Método que toma la suma de las edades de todas las personas registradas, y las divide ente la cantidad de estas
   public static double promedioEdades(float totalEdades, int cantidadPersonas){
 
     return totalEdades / cantidadPersonas;
 
   }
-    
+
+  // Método para retornar la cantidad de Hombres y Mujeres
+
+  public static void printCantidadDeHombresYMujeres(int cantidadPersonas, Persona[] personaArray){
+
+    int cantidadHombres = 0;
+    int cantidadMujeres = 0;
+    int generoNoDefinido = 0;
+    String Hombre = "Hombre";
+    String Mujer = "Mujer";
+
+    for (int i = 0; i < cantidadPersonas; i++){
+
+      String genero = personaArray[i].getGenero();
+      if (genero.equals(Hombre)){
+
+        cantidadHombres += 1; 
+
+      }
+
+      else if (genero.equals(Mujer)){
+
+        cantidadMujeres += 1;
+
+      }
+
+      else {
+
+        generoNoDefinido += 1;
+
+      }
+    }
+
+    System.out.println("La cantidad de Hombres y Mujeres ingresados es:");
+    System.out.println("Hombres: " + cantidadHombres);
+    System.out.println("Mujeres: " + cantidadMujeres);
+    System.out.println("Género no definido: " + generoNoDefinido + "\n");
+  } 
 }
