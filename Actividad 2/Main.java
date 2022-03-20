@@ -11,51 +11,77 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args){
+
+      // Método constructor del scanner para recibir input del usuario
+      Scanner userInput1 = new Scanner(System.in);
+
+      //Se ingresa la cantidad de personas a registrar
+      
+      System.out.println("¡Bienvenido! Para comenzar, por favor indique la cantidad de personas que desea registrar: ");
+      int cantidadPersonas = userInput1.nextInt();
+      
+
       
        // Se estblece un array de tipo Persona
-        Persona[] personaArray = new Persona[2];
-        Persona persona;
+      Persona[] personaArray = new Persona[cantidadPersonas];
+      Persona persona;
         
-        // Método constructor del scanner para recibir input del usuario
-        Scanner userInput;
-
-      for (int i = 0; i < 2 ; i++) {
-
-
-       userInput = new Scanner(System.in);
+      float edad = 0;
         
-          persona = new Persona();
-        
-         // Solicitamos al usuario los datos de persona1
-          System.out.println("¡Bienvenido! Para comenzar, por favor ingrese su nombre:");
-          String nombre = userInput.nextLine();
-          persona.setNombre(nombre);
 
-          System.out.println("Hola "+nombre+", ¿Cual es su apellido?:");
-          String apellido = userInput.nextLine();
-          persona.setApellido(apellido);
+      for (int i = 0; i < cantidadPersonas ; i++) {
 
-          System.out.println("Generando registro para "+nombre+" "+apellido+", ¿es usted Mujer u Hombre?:");
-          String genero = userInput.nextLine();
-          persona.setGenero(genero);
+            Scanner userInput = new Scanner(System.in);
+            persona = new Persona();
+    
+     // Solicitamos al usuario los datos de persona1
+            System.out.println("Por favor, ingrese su nombre:");
+            String nombre = userInput.nextLine();
+            persona.setNombre(nombre);
 
-          System.out.println("Muchas gracias, por último, ingrese su edad en números:");
-          int edad = userInput.nextInt();
-          persona.setEdad(edad); 
+            System.out.println("Hola "+nombre+", ¿Cual es su apellido?:");
+            String apellido = userInput.nextLine();
+            persona.setApellido(apellido);
 
-          System.out.println("Registro #"+i+" exitoso para "+nombre+" "+apellido+", "+genero+" de "+edad+" años.");
+            System.out.println("Generando registro para "+nombre+" "+apellido+", ¿es usted Mujer u Hombre?:");
+            String genero = userInput.nextLine();
+            persona.setGenero(genero);
+
+            System.out.println("Muchas gracias, por último, ingrese su edad en números:");
+            edad = userInput.nextInt();
+            persona.setEdad(edad); 
+            edad += edad;
+
+            System.out.println("Registro #"+i+" exitoso para "+nombre+" "+apellido+", "+genero+" de "+edad+" años.");
           
+        
           personaArray[i] = persona;
+          
       }
       
-      for (int i = 0; i < 2; i++){
+      // Se informa registro exitoso para las 5 personas y se muestra el listado en consola
+      System.out.println("Se ha completado el registro. Las personas ingresadas son: ");
 
-        persona = personaArray[i];
-                   
-            int edad = persona.getEdad();
+      for (int i = 0; i < cantidadPersonas; i++){
 
-        System.out.println(edad);
+        System.out.println(personaArray[i].getNombre() + " " + personaArray[i].getApellido() + ", " + personaArray[i].getGenero() + " de " + personaArray[i].getEdad() + " años.");
 
       }
+
+      // Imprime en consola el promedio de las edades, utilizando el metodo promedioEdades()
+      System.out.println("El promedio de edades es: " + promedioEdades(edad, cantidadPersonas));
+      
+
+
+      
+    }
+
+
+
+
+    public static double promedioEdades(float totalEdades, int cantidadPersonas){
+
+      return totalEdades / cantidadPersonas;
+
     }
 }

@@ -16,7 +16,7 @@ class Persona {
         private String nombre;
         private String apellido;
         private String genero;
-        private int edad;
+        private float edad;
 
 
     /**
@@ -54,13 +54,14 @@ class Persona {
         }
 
         // Para editar el campo "edad"
-        public void setEdad(int edadIngresada){
+        public void setEdad(float edadIngresada){
             this.edad = edadIngresada;
         }
 
         // Para obtener el campo "edad"
-        public int getEdad(){
+        public float getEdad(){
             return this.edad;
         }
 
+        
 }   
