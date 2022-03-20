@@ -1,11 +1,10 @@
 /**
  * Ejecicio Actividad 2, Programación Orientada a Objetos
  * IU Digital de Antioquia
- * 
- * xx/03/2022 
  *
- * @author Sebastian Posada Moreno
+ * 20/03/2022
  * 
+ * @author Sebastian Posada Moreno
  */
 
 class Persona {
